@@ -7,7 +7,7 @@ using Funq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestFiles.ServiceInterface;
@@ -28,10 +28,8 @@ namespace RestFiles
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            loggerFactory.AddConsole();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -75,8 +73,8 @@ namespace RestFiles
             if (!Directory.Exists(config.RootDirectory))
                 Directory.CreateDirectory(config.RootDirectory);
 
-            Plugins.Add(new TemplatePagesFeature { 
-                EnableDebugTemplateToAll = true,         
+            Plugins.Add(new SharpPagesFeature { 
+                MetadataDebugAdminRole = RoleNames.AllowAnon,
                 Args = { ["config"] = config }       
             });
         }

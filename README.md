@@ -11,4 +11,4 @@
 
 Try it out live at: [restfiles.servicestack.net](http://restfiles.servicestack.net)
 
-Follow [@ServiceStack](http://twitter.com) or [+ServiceStack](https://plus.google.com/u/0/communities/112445368900682590445) for updates.
+Follow [@ServiceStack](http://twitter.com) for updates.

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5</TargetFramework>
     <AssemblyName>RestFiles</AssemblyName>
     <PackageId>RestFiles</PackageId>
   </PropertyGroup>
@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.*" />
     <PackageReference Include="ServiceStack" Version="5.*" />
   </ItemGroup>
 

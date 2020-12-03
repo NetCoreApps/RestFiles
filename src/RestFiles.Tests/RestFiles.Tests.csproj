@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5</TargetFramework>
     <AssemblyName>RestFiles.Tests</AssemblyName>
     <PackageId>RestFiles.Tests</PackageId>
     <OutputType>Library</OutputType>
@@ -13,10 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.9.0" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.*" />
-    <PackageReference Include="ServiceStack.Kestrel" Version="5.*" />
+    <PackageReference Include="NUnit" Version="3.12.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.*" />
     <PackageReference Include="ServiceStack" Version="5.*" />
+    <PackageReference Include="ServiceStack.Kestrel" Version="5.*" />
   </ItemGroup>
 
 </Project>
