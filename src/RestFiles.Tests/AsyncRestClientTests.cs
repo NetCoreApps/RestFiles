@@ -55,11 +55,9 @@ namespace RestFiles.Tests
             File.WriteAllText(Path.Combine(FilesRootDir, "TESTUPLOAD.txt"), TestUploadFileContents);
         }
 
-        public IRestClientAsync CreateAsyncRestClient()
+        public JsonServiceClient CreateAsyncRestClient()
         {
             return new JsonServiceClient(WebServiceHostUrl);  //Best choice for Ajax web apps, faster than XML
-            //return new XmlServiceClient(WebServiceHostUrl); //Ubiquitous structured data format best for supporting non .NET clients
-            //return new JsvServiceClient(WebServiceHostUrl); //Fastest, most compact and resilient format great for .NET to .NET client / server
         }
 
         private static void FailOnAsyncError<T>(T response, Exception ex)
