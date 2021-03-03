@@ -40,6 +40,12 @@ namespace RestFiles.ServiceInterface
                 throw new NotSupportedException(
                 "POST only supports uploading new files. Use PUT to replace contents of an existing file");
 
+            if (!VirtualFiles.DirectoryExists(targetDir))
+            {
+                VirtualFiles.WriteFile(targetDir.CombineWith(".temp"), "");
+                VirtualFiles.DeleteFile(targetDir.CombineWith(".temp"));
+            }
+            
             foreach (var uploadedFile in base.Request.Files)
             {
                 var newFilePath = targetDir.CombineWith(uploadedFile.FileName);

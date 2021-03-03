@@ -46,7 +46,7 @@ namespace RestFiles.Tests
         public void OnBeforeEachTest()
         {
             //Setup the files directory with some test files and folders
-            FilesRootDir = appHost.MapProjectPath("~/App_Data/files/");
+            FilesRootDir = "App_Data/files/";
             if (Directory.Exists(FilesRootDir))
             {
                 Directory.Delete(FilesRootDir, true);
